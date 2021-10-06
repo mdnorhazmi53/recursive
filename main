@@ -1,0 +1,92 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter an integer: ");
+        int n = sc.nextInt();
+
+        final int difLR = 0;
+        final String l, r;
+        l = r = "";
+
+        recursion(n, difLR, l, r);
+    }
+
+    public static void recursion(int n, int difLR, String l, String r){
+
+        if (n==0) {
+            if (difLR == 0)
+                System.out.println(l + r + " ");
+                return;
+        }
+
+
+        if (n==1) {
+            if (difLR == 0) {
+                System.out.println(l + "0" + r + " ");
+                System.out.println(l + "1" + r + " ");
+            }
+            return;
+        }
+
+        if (n >= (2*difLR)){
+            recursion(n - 2, difLR, l + "0", r + "0");
+
+            recursion(n - 2, difLR -1, l + "0", r + "1");
+
+            recursion(n - 2, difLR, l + "1", r + "1");
+
+            recursion(n - 2, difLR +1, l + "1", r + "0");
+
+        }
+    }
+}
+import java.util.Scanner;
+
+public class array {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter an integer: ");
+        int n = sc.nextInt();
+
+        final int difLR = 0;
+        final String l, r;
+        l = r = "";
+
+        recursion(n, difLR, l, r);
+    }
+
+    public static void recursion(int n, int difLR, String l, String r){
+
+        if (n==0) {
+            if (difLR == 0)
+                System.out.println(l + r + " ");
+                return;
+        }
+
+
+        if (n==1) {
+            if (difLR == 0) {
+                System.out.println(l + "0" + r + " ");
+                System.out.println(l + "1" + r + " ");
+            }
+            return;
+        }
+
+        if (n >= (2*difLR)){
+            recursion(n - 2, difLR, l + "0", r + "0");
+
+            recursion(n - 2, difLR -1, l + "0", r + "1");
+
+            recursion(n - 2, difLR, l + "1", r + "1");
+
+            recursion(n - 2, difLR +1, l + "1", r + "0");
+
+        }
+    }
+}
